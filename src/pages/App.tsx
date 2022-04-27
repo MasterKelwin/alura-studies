@@ -1,5 +1,4 @@
-import React from 'react';
-import Botao from '../components/button';
+import Cronometro from '../components/cronometro';
 import Form from '../components/form';
 import Lista from '../components/list';
 import style from './app.module.scss';
@@ -9,6 +8,7 @@ function App() {
     <div className={style.AppStyle}>
       <Form />
       <Lista />
+      <Cronometro />
     </div>
   );
 }
