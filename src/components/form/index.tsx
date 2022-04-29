@@ -4,16 +4,17 @@ import Botao from "../button";
 import style from './form.module.scss';
 
 class Form extends React.Component<{
-    setTarefas: React.Dispatch<ITarefa[]>  
+    setTarefas: React.Dispatch<ITarefa[] | any>  
 }> {
-    state = {
+    state: ITarefa = {
         tarefa: "",
         tempo: "00:00"
     }
 
+
     addTarefa(evento: React.FormEvent<HTMLFormElement>) {
         evento.preventDefault(); //para não dar refresh na página
-        this.props.setTarefas(tarefasAntigas => [...tarefasAntigas, {...this.state}])
+        this.props.setTarefas((tarefasAntigas: any) => [...tarefasAntigas, {...this.state}])
     }
 
     render() {
